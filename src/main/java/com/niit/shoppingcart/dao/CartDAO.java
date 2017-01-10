@@ -9,5 +9,7 @@ public interface CartDAO {
 		public boolean update(Cart cart);
 		public boolean delete(Cart cart);
 		public Cart get(String id);
-		public List<Cart> list();
+		public Object list();
+		
+		
 }

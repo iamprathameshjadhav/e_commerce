@@ -7,28 +7,28 @@ import javax.persistence.Table;
 import org.springframework.stereotype.Component;
 
 @Entity
-@Table
+@Table (name="USER")
 @Component
 public class User {
-@Id
-private String user_id;
+
 private String name;
+@Id
+private String email;
 private String password;
 private String contact;
 private String address;
 private String role;
-private String billing_address;
-public String getUser_id() {
-	return user_id;
-}
-public void setUser_id(String user_id) {
-	this.user_id = user_id;
-}
 public String getName() {
 	return name;
 }
 public void setName(String name) {
 	this.name = name;
+}
+public String getEmail() {
+	return email;
+}
+public void setEmail(String email) {
+	this.email = email;
 }
 public String getPassword() {
 	return password;
@@ -53,12 +53,6 @@ public String getRole() {
 }
 public void setRole(String role) {
 	this.role = role;
-}
-public String getBilling_address() {
-	return billing_address;
-}
-public void setBilling_address(String billing_address) {
-	this.billing_address = billing_address;
 }
 
 }

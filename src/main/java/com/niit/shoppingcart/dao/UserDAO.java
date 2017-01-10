@@ -10,4 +10,6 @@ public interface UserDAO {
 	public boolean delete(User user);
 	public User get(String id);
 	public List<User> list();
+	public User isValidUser(String email, String password);
+	
 }
