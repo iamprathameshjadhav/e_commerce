@@ -12,6 +12,18 @@
 	<jsp:include page="category.jsp" />
 	</c:if>
 	
+	<c:if test="${UserClickedSubCategory}">
+		<jsp:include page="subcategory.jsp" />
+	</c:if>
+	
+	<c:if test="${UserClickedSubCategorytable}">
+		<jsp:include page="subcategorytable.jsp" />
+	</c:if>
+	
+	<c:if test="${UserClickedADDSUBCATEGORY}">
+		<jsp:include page="subcategory.jsp" />
+	</c:if>
+	
 	<c:if test="${UserClickedSUPPLIER}">
 		<jsp:include page="supplier.jsp" />
 	</c:if>
@@ -60,5 +72,14 @@
 	<c:if test="${UserClickedUpadateProduct }">
 	<jsp:include page="editproducttable.jsp" />
 	</c:if>
+	<c:if test="${UserclickedsubCEDIT }">
+	<jsp:include page="editsubcategory.jsp" />
+	</c:if>
+	<c:if test="${EditSubCategory }">
+	<jsp:include page="editsubcategory.jsp" />
+	</c:if>
+	
+	
+	
 </body>
 </html>

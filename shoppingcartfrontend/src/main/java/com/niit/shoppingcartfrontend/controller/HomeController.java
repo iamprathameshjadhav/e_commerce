@@ -13,10 +13,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.niit.shoppingcart.dao.CategoryDAO;
 import com.niit.shoppingcart.dao.ProductDAO;
+import com.niit.shoppingcart.dao.SubCategoryDAO;
 import com.niit.shoppingcart.dao.SupplierDAO;
 import com.niit.shoppingcart.dao.UserDAO;
 import com.niit.shoppingcart.model.Category;
 import com.niit.shoppingcart.model.Product;
+import com.niit.shoppingcart.model.SubCategory;
 import com.niit.shoppingcart.model.Supplier;
 import com.niit.shoppingcart.model.User;
 
@@ -44,6 +46,10 @@ public class HomeController {
 	Product product;
 	@Autowired
 	ProductDAO productDAO;
+	@Autowired
+	SubCategory subcategory;
+	@Autowired
+	SubCategoryDAO subcategoryDAO;
 	
 	@RequestMapping("/login")
 	public String login(Model model) 
@@ -73,7 +79,8 @@ public class HomeController {
 		session.setAttribute("ProductList", productList);
 		 List<User> userList = userDAO.list();
 		   session.setAttribute("UserList", userList);
-	  
+		   session.setAttribute("subcategory", subcategory);
+			session.setAttribute("subcategoryList", subcategoryDAO.list());
 	
 			
 		user= userDAO.isValidUser(email, password);
@@ -99,8 +106,9 @@ public class HomeController {
 			else
 			{
 
-				//model.addAttribute("isUser", true);
+				
 				 session.setAttribute("isUser", true);
+				
 				 model.addAttribute("success"," successfully logged In");
 				 session.setAttribute("name",user.getName());
 				return "index";
@@ -116,6 +124,8 @@ public class HomeController {
 	public String logout(Model model,HttpSession session) {
 		session.invalidate();
 		model.addAttribute("UserClickedLogout", "true");
+	/*	session.setAttribute("category", category);
+		session.setAttribute("categoryList", categoryDAO.list());*/
 		return "index";
 	}
 
@@ -163,48 +173,12 @@ public class HomeController {
 		model.addAttribute("UserClickedfooter", "true");
 		session.setAttribute("category", category);
 		session.setAttribute("categoryList",categoryDAO.list());
-	  
+		   session.setAttribute("subcategory", subcategory);
+			session.setAttribute("subcategoryList", subcategoryDAO.list());
+		
+		
 		return "index";
 	}
 
-	@RequestMapping("/menstopwear")
-	public String Menstop(Model model)
-
-	{
-		model.addAttribute("UserClickedTopWearr", "true");
-		return "index";
-	}
-
-	@RequestMapping("/mensbottomwear")
-	public String Mensbottom(Model model)
-
-	{
-		model.addAttribute("UserClickedBottomWear", "true");
-		return "index";
-	}
-
-	@RequestMapping("/womenstopwear")
-	public String Womenstop(Model model)
-
-	{
-		model.addAttribute("UserClickedTopWearr", "true");
-		return "index";
-	}
-
-	@RequestMapping("/womensbottomwear")
-	public String Womensbottom(Model model)
-
-	{
-		model.addAttribute("UserClickedBottomWear", "true");
-		return "index";
-	}
-
-	@RequestMapping("/thehotlist")
-	public String Hotlist(Model model)
-
-	{
-		model.addAttribute("UserClickedHotList", "true");
-		return "index";
-	}
 	
 }

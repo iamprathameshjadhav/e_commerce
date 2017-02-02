@@ -12,6 +12,11 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>	
 	
+	<script>
+	 function initializeDropdown(){
+		 $('.dropdown-toggle').dropdown();
+	 }
+	 </script>
 </head>
 <body>
 

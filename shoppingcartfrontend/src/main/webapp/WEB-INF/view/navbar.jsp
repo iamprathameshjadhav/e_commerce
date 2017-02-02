@@ -10,6 +10,12 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	
+	 <script>
+	 function initializeDropdown(){
+		 $('.dropdown-toggle').dropdown();
+	 }
+	 </script>
 </head>
 
 
@@ -28,17 +34,27 @@
 
 
 
-	<nav class="navbar navbar-default" style="baground-color:black";>
+	<nav class="navbar navbar-default">
 		<div class="container-fluid">
-
-			<ul class="nav navbar-nav">
-				<c:forEach items="${categoryList}" var="category">
-				<li><a href="#" ><b> ${category.name}</b></a> 
-				
-				</li>
-				</c:forEach>
-				
-	</ul>
+		
+		<ul class="nav navbar-nav">
+    <c:forEach items="${categoryList}" var="category">
+    
+    <li class="dropdown"><a class="dropdown-toggle" id="dLabel-${category.name}" data-toggle="dropdown" href="#"><b>${category.name}</b></a>
+    
+    	<ul class="dropdown-menu" aria-labelledby="dLabel-${category.name}">
+    	
+    		<c:forEach items="${subcategoryList}" var="subcategory">
+            <li><a href="<c:url value='/displayProduct?categoryId=${category.category_id}&subCategoryId=${subcategory.id}'/>">${subcategory.name}</a></li>
+          	</c:forEach>
+        </ul>
+    
+    </li>
+    
+    </c:forEach>
+    </ul>
+		
+			
 			
 			<ul class="nav navbar-nav navbar-right">
      
@@ -59,6 +75,7 @@
 				
 				<li><a style="font-size: 15px;" href="logout"><span
 						class="glyphicon glyphicon-log-out"></span><b>Logout</b></a></li>
+				
 				</c:if>
 			</ul>
 		</div>

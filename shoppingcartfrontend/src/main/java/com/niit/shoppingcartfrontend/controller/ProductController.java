@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
@@ -38,16 +39,28 @@ public class ProductController {
 	
 	 @RequestMapping("/addproduct")
 	 public String Addproduct(Model model, @RequestParam("image") MultipartFile file , @RequestParam("ID") String product_id, @RequestParam("name") String name, @RequestParam("price") String price,
-	 @RequestParam("quantity") String quantity, @RequestParam("category_id") String category_id, @RequestParam("supplier_id") String supplier_id, HttpSession session)
+	 @RequestParam("quantity") String quantity, @RequestParam("category_id") String category_id, @RequestParam("supplier_id") String supplier_id,@RequestParam("id") String subcategory_id, HttpSession session)
 	 {
+		 boolean isPresent = productDAO.get(product_id) !=null;
 		 product.setProduct_id(product_id);
 		 product.setName(name);
 		 product.setPrice(price);
 		 product.setQuantity(quantity);
 		 product.setCategory_id(category_id);
 		 product.setSupplier_id(supplier_id);
+		 product.setSubcategory_id(subcategory_id);
 		 System.out.println("prathamesh");
- if(productDAO.save(product))
+		 
+		 boolean flag = false;
+		 if(isPresent){
+			 flag = productDAO.save(product);
+		 }
+		 else
+		 {
+			 flag = productDAO.save(product);
+		 }
+		 
+     if(flag)
  {
 	 
 	 Util.upload(path, file, product.getProduct_id()+".jpg");
@@ -136,4 +149,23 @@ public class ProductController {
 	   model.addAttribute("UserClickedUpadateProduct", true);
       return "admin";
 		} 
+	 
+	 @RequestMapping("/displayProduct")
+		public String displayProduct(Model model, HttpSession session,	@RequestParam("categoryId") String categoryId, @RequestParam("subCategoryId") String subCategoryId)
+	 {
+
+			List<Product> productList = productDAO.listByCategoryAndSubCategory(categoryId, subCategoryId);
+			if (productList != null) {
+				model.addAttribute("successMsg", productList.size() + " product(s) found !!!");
+				session.setAttribute("productList", productDAO.list());
+				model.addAttribute("productListLoaded", true);
+				
+			} 
+			else
+			{
+				model.addAttribute("successMsg", "No products found for this category !!!");
+			}
+
+			return "index";
+		}
 }

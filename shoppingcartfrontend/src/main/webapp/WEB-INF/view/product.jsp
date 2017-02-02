@@ -47,6 +47,15 @@
     </div>
     <br>
      <div>
+  <label >SubCategory-ID</label>
+     <select name="id">
+    <c:forEach var="list" items="${SubCategoryList}">
+    <option>${list.id}</option>
+    </c:forEach>
+    </select>
+    </div>
+    <br>
+     <div>
   <label >Supplier-ID</label>
      <select name= "supplier_id">
     <c:forEach var="list" items="${SupplierList}">

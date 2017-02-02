@@ -10,8 +10,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+
 import com.niit.shoppingcart.dao.UserDAO;
 import com.niit.shoppingcart.model.Category;
+
 import com.niit.shoppingcart.model.User;
 
 @Controller
@@ -20,6 +22,7 @@ public class UserController {
 	User user;
 	@Autowired
 	UserDAO userDAO;
+	
 
 	
 	@RequestMapping("manage_user_remove")

@@ -57,16 +57,12 @@ display: inline-block;
 width: 100%;
 height : 60px ;
 } */
+
 </style>
+<center><img src=<c:url value="/resources/lib/images/disscount.jpg"/>></center>
+<br>
 <center><img src=<c:url value="/resources/lib/images/saleimg.jpg"/>></center>
 <br>
-<!-- <div id="img-col">
-<img src=<c:url value="/resources/lib/images/col1.jpg"/>>
-<img src=<c:url value="/resources/lib/images/col2.jpg"/>>
-<img src=<c:url value="/resources/lib/images/col3.jpg"/>>
-<img src=<c:url value="/resources/lib/images/col4.jpg"/>>
-<img src=<c:url value="/resources/lib/images/col5.jpg"/>>
-</div> -->
 <body>
 
 

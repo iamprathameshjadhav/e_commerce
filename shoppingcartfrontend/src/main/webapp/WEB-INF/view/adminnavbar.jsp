@@ -24,9 +24,10 @@
 <nav class="navbar navbar-default">
 		<div class="container-fluid">
 
-			<ul class="nav navbar-nav">
+	 <ul class="nav navbar-nav">
   	 <li><a style="font-size: 20px;" href="usertable"><b>Manage</b></a></li>
    <li><a style="font-size: 20px;" href="category"><b>Category</b></a></li>
+   <li><a style="font-size: 20px;" href="subcategory"><b>SubCategory</b></a></li>
    <li><a style="font-size: 20px;" href="supplier"><b>Supplier</b></a></li>
     <li><a style="font-size: 20px;" href="product"><b>Product</b></a></li>
 

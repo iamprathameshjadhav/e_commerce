@@ -165,14 +165,14 @@
 		<div class="container-fluid">
 
 			<ul class="nav navbar-nav">
-	<!-- <p id="footer-text">PRADHA.COM</p> -->
-        <div id=footer_links class="col-sm-offset-0 col-sm-10">
+
+        <div id=footer_links>
        
         <img id="footer-logo" src=<c:url value="/resources/lib/images/log.png"/> id="logo">
-        <a href="homepage" class="btn btn-success" style="background-color:grey;"><b>Home</b></a>
+       <!--  <a href="homepage" class="btn btn-success" style="background-color:grey;"><b>Home</b></a>
 		<a href="login" class= "btn btn-success" style="background-color:grey;"><b>log-In</b></a>
   		<a href="register" class="btn btn-success" style="background-color:grey;"><b>Sign-Up</b></a>
-      	<a href="aboutus" class="btn btn-success" style="background-color:grey;"><b>About Us</b></a>
+      	<a href="aboutus" class="btn btn-success" style="background-color:grey;"><b>About Us</b></a> -->
   		</div>
   		</ul>
   		</div>
@@ -203,7 +203,7 @@
   		</div>
   		</div>
 <br>
-	<p><center><b>PRADHA.COM © 2016 | All Rights Reserved</b></center></p>
+	<p><center><b>PRADHA.COM 2016 | All Rights Reserved</b></center></p>
 
 </div>
 </div>

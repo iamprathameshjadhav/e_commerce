@@ -7,7 +7,7 @@
 <var name= "shippingAddress" class="com.niit.shoppingcart.model.ShippingAddress"/>
 <var name= "billingAddress"  class="com.niit.shoppingcart.model.BillingAddress"/>
   <var name= "cart" class= "com.niit.shoppingcart.model.Cart"/>
-<var name= "order" class= "com.niit.shoppingcart.model.Order"/>
+<var name= "orders" class= "com.niit.shoppingcart.model.Orders"/>
 <var name= "paymentMethod" class= "com.niit.shoppingcart.model.PaymentMethod"></var>
 <var name="orderWebflow" class="com.niit.shoppingcart.webflow.OrderWebflow"/>
 
@@ -54,7 +54,7 @@
     <end-state id= "toIndex" view="externalRedirect:contextRelative:/" />
     
     <global-transitions>
-    <transition on ="cancel" to ="toCartView"/>
+    <transition on ="cancel" to ="toIndex"/>
     </global-transitions>
     
    </flow>
