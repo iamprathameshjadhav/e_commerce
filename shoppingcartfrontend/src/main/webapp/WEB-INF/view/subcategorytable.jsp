@@ -11,7 +11,7 @@
   
 <div class="col-sm-offset-2 col-sm-12">
 <div class="col-sm-7">
- <h1 class="well center" style=" font-family: Maiandra GD; width:925px;"><center>SUBCATEGORY TABLE</center></h1>
+ <center><h1 class="well center" style=" font-family: Maiandra GD; width:925px;">SUBCATEGORY TABLE</h1></center>
  </div>
 <div class="container"> 
 <div class="well col-md-8">            
@@ -32,12 +32,13 @@
             <td>${subcategory.id}</td>
             <td>${subcategory.name}</td>
             <td>${subcategory.description}</td>
-            <td><a href="<c:url value='/manage_subcategory_edit?id=${subcategory.id }'/>" button class="btn btn-success btn-sm">Edit</a></td>
-            <td><a href="<c:url value='/manage_subcategory_remove?id=${subcategory.id }'/>" button class="btn btn-danger btn-sm">Delete</a></td>
+            <td><a href="<c:url value='/manage_subcategory_edit?id=${subcategory.id }'/>"  class="btn btn-success btn-sm">Edit</a></td>
+            <td><a href="<c:url value='/manage_subcategory_remove?id=${subcategory.id }'/>"  class="btn btn-danger btn-sm">Delete</a></td>
             </tr>
             </c:forEach>
             </tbody>   
   </table>
+</div>
 </div>
 </div>
 </body>

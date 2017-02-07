@@ -38,7 +38,7 @@ public class ProductController {
 	SupplierDAO supplierDAO;
 	
 	 @RequestMapping("/addproduct")
-	 public String Addproduct(Model model, @RequestParam("image") MultipartFile file , @RequestParam("ID") String product_id, @RequestParam("name") String name, @RequestParam("price") String price,
+	 public String Addproduct(Model model, @RequestParam("image") MultipartFile file , @RequestParam("ID") String product_id, @RequestParam("name") String name, @RequestParam("price") int price,
 	 @RequestParam("quantity") String quantity, @RequestParam("category_id") String category_id, @RequestParam("supplier_id") String supplier_id,@RequestParam("id") String subcategory_id, HttpSession session)
 	 {
 		 boolean isPresent = productDAO.get(product_id) !=null;
@@ -125,7 +125,7 @@ public class ProductController {
 
 	}
 	 @RequestMapping("/editproduct")
-	 public String Editproduct(Model model, @RequestParam("ID") String product_id, @RequestParam("name") String name, @RequestParam("price") String price,
+	 public String Editproduct(Model model, @RequestParam("ID") String product_id, @RequestParam("name") String name, @RequestParam("price") int price,
 	 @RequestParam("quantity") String quantity, @RequestParam("category_id") String category_id, @RequestParam("supplier_id") String supplier_id, HttpSession session)
 	 {
 		 product.setProduct_id(product_id);

@@ -9,13 +9,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.niit.shoppingcart.DAOImpl.CartDAOImpl;
+import com.niit.shoppingcart.dao.CartDAO;
 import com.niit.shoppingcart.dao.CategoryDAO;
 import com.niit.shoppingcart.dao.ProductDAO;
 import com.niit.shoppingcart.dao.SubCategoryDAO;
 import com.niit.shoppingcart.dao.SupplierDAO;
 import com.niit.shoppingcart.dao.UserDAO;
+import com.niit.shoppingcart.model.Cart;
 import com.niit.shoppingcart.model.Category;
 import com.niit.shoppingcart.model.Product;
 import com.niit.shoppingcart.model.SubCategory;
@@ -50,6 +54,12 @@ public class HomeController {
 	SubCategory subcategory;
 	@Autowired
 	SubCategoryDAO subcategoryDAO;
+	@Autowired
+	Cart cart;
+	@Autowired
+	CartDAO cartDAO;
+	
+	
 	
 	@RequestMapping("/login")
 	public String login(Model model) 
@@ -81,6 +91,8 @@ public class HomeController {
 		   session.setAttribute("UserList", userList);
 		   session.setAttribute("subcategory", subcategory);
 			session.setAttribute("subcategoryList", subcategoryDAO.list());
+			List<Cart> cartList = cartDAO.getActiveByUser(user.getId());
+			session.setAttribute("cartItemCount", cartList.size());
 	
 			
 		user= userDAO.isValidUser(email, password);
@@ -138,6 +150,7 @@ public class HomeController {
 		return "index";
 	}
 	
+	
    @RequestMapping("/signup")
 	public String Signup(Model model, @RequestParam("name") String name, @RequestParam("email") String email, @RequestParam("password") String password,
 			 @RequestParam("contact") String contact, @RequestParam("address") String address, HttpSession session){
@@ -147,7 +160,7 @@ public class HomeController {
 		user.setEmail(email);
 		user.setPassword(password);
 		user.setContact(contact);
-		user.setAddress(address);
+	//	user.setAddress(address);
         user.setRole("user");
 
         if(userDAO.save(user))
@@ -163,6 +176,7 @@ public class HomeController {
 		return "index";
 	}
   
+ 
 
 	@RequestMapping(value = { "/homepage", "/" })
 	public String homepage( Model model,HttpSession session)

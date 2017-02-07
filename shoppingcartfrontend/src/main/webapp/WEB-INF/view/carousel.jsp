@@ -59,10 +59,7 @@ height : 60px ;
 } */
 
 </style>
-<center><img src=<c:url value="/resources/lib/images/disscount.jpg"/>></center>
-<br>
-<center><img src=<c:url value="/resources/lib/images/saleimg.jpg"/>></center>
-<br>
+
 <body>
 
 

@@ -24,18 +24,25 @@ public class SubCategoryController {
 	
 	
 	@RequestMapping("/subcategory")
-	public String subcategory(Model model)
+	public String subcategory(Model model,HttpSession session)
 
 	{
+		 session.setAttribute("subcategory", subcategory);
+		   List<SubCategory> categoryList = subcategoryDAO.list();
+		   session.setAttribute("SubCategoryList", categoryList);
 		model.addAttribute("UserClickedSubCategory", "true");
 		return "admin";
 	}
 	
 	@RequestMapping("/subcategorytable")
-	public String subcategorytable(Model model)
+	public String subcategorytable(Model model,HttpSession session)
 
 	{
 		model.addAttribute("UserClickedSubCategorytable", "true");
+		   List<SubCategory> categoryList = subcategoryDAO.list();
+		   session.setAttribute("SubCategoryList", categoryList);
+
+		
 		return "admin";
 	}
 	
@@ -54,8 +61,8 @@ public class SubCategoryController {
 	 model.addAttribute("Smessage","SubCategory added");
 	 
 	 session.setAttribute("subcategory", subcategory);
-	   List<SubCategory> subcategoryList = subcategoryDAO.list();
-	   session.setAttribute("SubCategoryList", subcategoryList);
+	   List<SubCategory> categoryList = subcategoryDAO.list();
+	   session.setAttribute("SubCategoryList", categoryList);
  }
  else
 	 model.addAttribute("SEmessage","Error occured");
@@ -74,8 +81,8 @@ public class SubCategoryController {
 			System.out.println(subcategory);
 			boolean flag=subcategoryDAO.delete(id);
 			 
-			List<SubCategory> subcategoryList = subcategoryDAO.list();
-			   session.setAttribute("SubCategoryList", subcategoryList);
+			List<SubCategory> categoryList = subcategoryDAO.list();
+			   session.setAttribute("SubCategoryList", categoryList);
 
 			String msg="successfull done the operation";
 		if(!flag==true)
@@ -98,19 +105,19 @@ public class SubCategoryController {
 
 }
 	 
-	 /*@RequestMapping("/editcategory")
-	 public String Addcategory(Model model, HttpSession session, @RequestParam("ID") String id, @RequestParam("name") String name, @RequestParam("description") String description)
+	 @RequestMapping("/editsubcategory")
+	 public String editsubcategory(Model model, HttpSession session, @RequestParam("ID") String id, @RequestParam("name") String name, @RequestParam("description") String description)
 	 {
 		 subcategory.setId(id);
 		 subcategory.setName(name);
 		 subcategory.setDescription(description);
  if(subcategoryDAO.update(subcategory))
  {
-	 model.addAttribute("Smessage","Category updated");
+	 model.addAttribute("Smessage","SubCategory updated");
 	 
 	 session.setAttribute("subcategory", subcategory);
-	   List<SubCategory> subcategoryList = subcategoryDAO.list();
-	   session.setAttribute("SubCategoryList", subcategoryList);
+	   List<SubCategory> categoryList = subcategoryDAO.list();
+	   session.setAttribute("SubCategoryList", categoryList);
       model.addAttribute("EditSubCategory", "true");
 	   return "admin";
  }
@@ -120,6 +127,6 @@ public class SubCategoryController {
 	      model.addAttribute("SEmessage","Error Occured");
      }
       return "admin";
- }*/
+ }
 
 }

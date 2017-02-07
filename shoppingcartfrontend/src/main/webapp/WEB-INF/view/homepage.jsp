@@ -12,6 +12,6 @@
 <%-- <lable  style="font-size: 20px; font-family: serif background-color : green; color: black"/>${success}</lable> --%>
 <lable  style="font-size: 20px; font-family: serif background-color : green; color: green"/>  ${validmsg} </lable>
 </div>
-<jsp:include page="carousel.jsp" />
+
 </body>
 </html>

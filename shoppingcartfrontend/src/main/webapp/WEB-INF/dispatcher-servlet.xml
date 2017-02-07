@@ -46,6 +46,7 @@
 	
 <flow:flow-registry id="flowRegistry" 
 flow-builder-services="flowBuilderServices" base-path="/WEB-INF">
+
 <!-- here the id is mapped to invoke this flow -->
 <flow:flow-location id="cart_checkout" path="/checkout.xml" />
 </flow:flow-registry>

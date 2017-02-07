@@ -56,6 +56,10 @@
 	<jsp:include page="productdisplay.jsp" />
 	</c:if>
 	
+	<c:if test="${ShowCartTable}">
+		<jsp:include page="carttable.jsp" />
+	</c:if>
+	
  </body>
  <jsp:include page="footer.jsp" />
 </html>

@@ -12,10 +12,11 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </head>
+<jsp:include page="navbar.jsp" />
 <body style="padding: 0px;">
 
   <div class="container" style="margin-bottom: 19px">
-    <center><h1 class="well">Payment Method!</h1></center>
+    <center><h1>Payment Method!</h1></center>
     <div class="col-lg-6 well">
       <div class="row">
 

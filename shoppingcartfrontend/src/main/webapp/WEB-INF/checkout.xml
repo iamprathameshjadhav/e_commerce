@@ -3,13 +3,13 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.springframework.org/schema/webflow
   http://www.springframework.org/schema/webflow/spring-webflow-2.4.xsd">
-
+  
 <var name= "shippingAddress" class="com.niit.shoppingcart.model.ShippingAddress"/>
 <var name= "billingAddress"  class="com.niit.shoppingcart.model.BillingAddress"/>
   <var name= "cart" class= "com.niit.shoppingcart.model.Cart"/>
 <var name= "orders" class= "com.niit.shoppingcart.model.Orders"/>
 <var name= "paymentMethod" class= "com.niit.shoppingcart.model.PaymentMethod"></var>
-<var name="orderWebflow" class="com.niit.shoppingcart.webflow.OrderWebflow"/>
+<var name="orderWebflow" class="com.niit.shoppingcartfrontend.webflow.OrderWebFlow"/>
 
 <on-start>
 <evaluate expression="orderWebflow.initFlow()" result="flowScope.order"/>

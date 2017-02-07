@@ -9,6 +9,7 @@
 	
 </head>
 <body>
+
 <div class="container">
    
 		<div class="form-actions">
@@ -18,7 +19,15 @@
          		<h4> ${product.name}</h4>
          		<h4>Price:${product.price}</h4>
          		<a href="cart_checkout" class="btn btn-info">Buy Now</a>
-         		<a style="font-size: 20px;" href="#"><span><img src=<c:url value="/resources/lib/images/shopping-bag.png"/>></span></a>
+         		 
+         	<%-- 	<a style="font-size: 20px;" href="<c:url value='/addToCart?productId=${product.product_id}'/>"><span><img src=<c:url value="/resources/lib/images/shopping-bag.png"/>></span></a> --%>
+         	    <c:if test="${not empty isUser}">
+         	     <a href="<c:url value='/addToCart?productId=${product.product_id}'/>" button class="btn btn-danger btn-sm">Add to cart</a>
+                    </c:if>  
+                      </div>
+								
+				
+         	    
          		</div>
          	</c:forEach>
 		</div>

@@ -52,6 +52,7 @@
     </li>
     
     </c:forEach>
+    
     </ul>
 		
 			
@@ -71,12 +72,15 @@
 				
 				<c:if test="${not empty isUser}">
 				<li style="font-size: 15px;"> hello: ${name} </li>
-				 <li><a style="font-size: 15px;" href="#"><span><img src=<c:url value="/resources/lib/images/shopping-bag.png"/>></span><b>My Bag</b></a></li>
+				<%--  <li><a style="font-size: 15px;" href="cartTable"><span><img src=<c:url value="/resources/lib/images/shopping-bag.png"/> ></span><b>My Bag(${cartItemCount})</b></a></li> --%>
+				
+				<li><a href="cartTable">Cart(${cartItemCount})</a></li>
 				
 				<li><a style="font-size: 15px;" href="logout"><span
 						class="glyphicon glyphicon-log-out"></span><b>Logout</b></a></li>
 				
 				</c:if>
+				
 			</ul>
 		</div>
 		</head>
