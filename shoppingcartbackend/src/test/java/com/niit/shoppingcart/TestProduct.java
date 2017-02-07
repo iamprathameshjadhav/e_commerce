@@ -45,7 +45,7 @@ public class TestProduct {
         
         product.setProduct_id("Mob_00");
         product.setName("abc");
-        product.setPrice("100");
+      //  product.setPrice("100");
         product.setCategory_id("Mob_01");
         product.setSupplier_id("Mob_11");
         
@@ -68,7 +68,7 @@ public class TestProduct {
   public void updateCategoryTestCase(){
       product.setProduct_id("Mob_00");
       product.setName("Prathmesh");
-      product.setPrice("100");
+     // product.setPrice("100");
       product.setCategory_id("mob_02");
       product.setSupplier_id("PS123");
       Boolean status=productDAO.update(product);

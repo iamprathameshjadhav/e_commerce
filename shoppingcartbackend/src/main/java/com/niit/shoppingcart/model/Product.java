@@ -21,7 +21,7 @@ public class Product implements Serializable{
 	@Id
 	private String product_id;
 	private String name;
-	private String price;
+	private int price;
 	private String quantity;
 	@Column(name = "CATEGORY_ID")
 	private String category_id;
@@ -122,11 +122,11 @@ public class Product implements Serializable{
 
 	
 
-	public String getPrice() {
+	public int getPrice() {
 		return price;
 	}
 
-	public void setPrice(String price) {
+	public void setPrice(int price) {
 		this.price = price;
 	}
 

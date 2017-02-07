@@ -1,4 +1,4 @@
-package com.niit.shoppingcart;
+/*package com.niit.shoppingcart;
 
 import org.junit.Assert;
 import org.junit.BeforeClass;
@@ -8,10 +8,10 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import com.niit.shoppingcart.dao.CartDAO;
 import com.niit.shoppingcart.model.Cart;
+*/
 
 
-
-public class TestCart {
+/*public class TestCart {
 
 	 @Autowired
 	    static AnnotationConfigApplicationContext context;
@@ -87,3 +87,4 @@ public class TestCart {
 	      Assert.assertEquals("Get Cart Test Case",3,cartDAO.list());
 	  }
 }
+*/

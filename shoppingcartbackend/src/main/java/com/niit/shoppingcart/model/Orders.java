@@ -37,7 +37,7 @@ import org.springframework.stereotype.Component;
 		@Column(name="payment_method")
 		private String paymentMethod;
 	    
-		private String totalAmount;
+		private int totalAmount;
 
 		
 		public int getId() {
@@ -88,12 +88,12 @@ import org.springframework.stereotype.Component;
 			this.paymentMethod = paymentMethod;
 		}
 
-		public String getTotalAmount() {
+		public int getTotalAmount() {
 			return totalAmount;
 		}
 
-		public void setTotalAmount(String string) {
-			this.totalAmount = string;
+		public void setTotalAmount(int totalamount) {
+			this.totalAmount = totalamount;
 		}
 
 		

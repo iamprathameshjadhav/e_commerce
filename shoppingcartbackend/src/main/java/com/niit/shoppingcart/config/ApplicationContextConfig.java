@@ -15,13 +15,12 @@ import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import com.niit.shoppingcart.model.BillingAddress;
 import com.niit.shoppingcart.model.Cart;
 import com.niit.shoppingcart.model.Category;
 import com.niit.shoppingcart.model.Orders;
-import com.niit.shoppingcart.model.PaymentMethod;
+
 import com.niit.shoppingcart.model.Product;
-import com.niit.shoppingcart.model.ShippingAddress;
+
 import com.niit.shoppingcart.model.SubCategory;
 import com.niit.shoppingcart.model.Supplier;
 import com.niit.shoppingcart.model.User;
@@ -64,16 +63,13 @@ public class ApplicationContextConfig {
 
 		LocalSessionFactoryBuilder sessionBuilder = new LocalSessionFactoryBuilder(dataSource);
 		sessionBuilder.addProperties(getHibernateProperties());
-		sessionBuilder.addAnnotatedClass(Cart.class);
 		sessionBuilder.addAnnotatedClass(Category.class);
 		sessionBuilder.addAnnotatedClass(Product.class);
 	    sessionBuilder.addAnnotatedClass(Supplier.class);
 		sessionBuilder.addAnnotatedClass(User.class);
 		sessionBuilder.addAnnotatedClass(SubCategory.class);
 		sessionBuilder.addAnnotatedClass(Orders.class);
-		sessionBuilder.addAnnotatedClass(BillingAddress.class);
-		sessionBuilder.addAnnotatedClass(ShippingAddress.class);
-		sessionBuilder.addAnnotatedClass(PaymentMethod.class);
+		sessionBuilder.addAnnotatedClass(Cart.class);
 			return sessionBuilder.buildSessionFactory();
 	}
 

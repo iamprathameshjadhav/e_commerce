@@ -46,7 +46,7 @@ public class TestUser {
 	        user.setName("abc");
 	        user.setPassword("123");
 	        user.setContact("12345678");
-	        user.setAddress("pqr");
+	    //    user.setAddress("pqr");
 	       
 	        
 	        Boolean status=userDAO.save(user);
@@ -70,7 +70,7 @@ public class TestUser {
 	        user.setName("my name is prahamesh updated");
 	        user.setPassword("123");
 	        user.setContact("12345678");
-	        user.setAddress("pqr");
+	      //  user.setAddress("pqr");
 	      
 	        
 	      Boolean status=userDAO.update(user);
